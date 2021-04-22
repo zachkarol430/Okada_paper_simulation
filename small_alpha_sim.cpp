@@ -22,10 +22,9 @@
 using namespace std;
 
 ostringstream oss;
-float s;
-int N_fix,i,M_f;
+double N_fix,i,M_f;
 array<double,5> selection_coefficients=  {0,.01, .02, 0.04, 0.08};
-double M,W,p_i,p_prime;
+double M,W,p_i,p_prime,s;
 
 
 ofstream fout;
@@ -43,8 +42,8 @@ int main(int argc, char* argv[0])
 mkdir(directory, 0777);
 chdir(directory);
     const double alpha = atof(argv[1]);
-    const float num_trials = atof(argv[2]);
-    const float N= atof(argv[3]);
+    const double num_trials = atof(argv[2]);
+    const double N= atof(argv[3]);
     
     
     //low key not my code but like im citing it so thats fine right?
@@ -70,7 +69,6 @@ chdir(directory);
     for(int trial =0; trial < num_trials; trial++)
     {
          M_f= 1;
-        M=1;
         while(0<M_f && M_f<N){
             s= selection_coefficients[i];
             M= abs(gsl_ran_levy(r,pow(M_f,(1.0/alpha)) , alpha));
@@ -78,7 +76,7 @@ chdir(directory);
             p_i =(M)/(M+W);
             p_prime = (p_i*(1+s))/((p_i*s)+1);
             M_f = gsl_ran_binomial(r, p_prime, N);
-            if (M_f == N){ N_fix = N_fix+1;}
+            if (M_f >= N){ N_fix = N_fix+1;}
     }
     }
         cout<<N_fix/num_trials<<endl;
