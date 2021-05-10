@@ -51,7 +51,7 @@ chdir(directory);
     double PI= 3.1415;
     int sum_extinct_gens=0;
     
-    //low key not my code but like im citing it so thats fine right?
+    //not my code
     const gsl_rng_type * T;
      gsl_rng *r;
      gsl_rng_env_setup();
