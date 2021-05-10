@@ -110,9 +110,9 @@ chdir(directory);
             
             p_i =(M)/(M+W);
             p_prime = (p_i*(1+s))/(p_i*(1+s)+(1-p_i));
-         M_f= gsl_ran_binomial(r, p_prime, N);
+         M_f= gsl_ran_binomial(r, p_prime, N); //I think this is the source of the issue for alpha<2
             if(M_f==0){
-                sum_extinct_gens+= generation;
+                sum_extinct_gens+= generation; //all the generation code just gets extinction time
             }
           
             if (M_f >= N){ N_fix = N_fix+1;}
