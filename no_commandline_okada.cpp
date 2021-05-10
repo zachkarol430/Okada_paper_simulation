@@ -88,7 +88,7 @@ chdir(directory);
             W=N-M_f;
             }
             if( alpha==2){
-                //does not work currently but juse use WF instead
+                //does not work currently but just use WF instead
                 M= gsl_ran_gaussian(r, pow(2, .5)* M_f);
                 W= gsl_ran_gaussian(r, (N-M_f)*pow(2,.5));
             }
