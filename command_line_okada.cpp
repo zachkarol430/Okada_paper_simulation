@@ -49,7 +49,7 @@ chdir(directory);
     const double N= atof(argv[3]);
     
     
-    //low key not my code but like im citing it so thats fine right?
+    //Not my code
     const gsl_rng_type * T;
      gsl_rng *r;
      gsl_rng_env_setup();
