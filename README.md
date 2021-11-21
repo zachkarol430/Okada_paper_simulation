@@ -15,7 +15,6 @@ This will then print the fixation probailty and a folder will be created in your
 
 The results file will be a CSV with output+ r where r is the random "seed". Using the same same r and going back in code will yield same results. 
 
-Lastly there seems to maybe be an issue with the output and I think it might be the binomial function and the low probabilty.
 
 Also this should only work for mac and linux and please reach out if you have any questions! 
 
